@@ -1,2 +1,2 @@
 # qr-code-gen
-QR Code Generator with using inquirer and qr-image packages
+Generates a QR Code into the current repository and saves it as a PNG file along with the text file which consists of the user input
