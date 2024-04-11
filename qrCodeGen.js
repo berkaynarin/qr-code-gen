@@ -6,10 +6,14 @@ inquirer
   .prompt([
     {name: 'url' ,message: 'Please enter the URL that you want generate a QR Code out of it: '}
   ])
-  .then((answers) => {
+  .then((answers) => {(
     var png_buffer = qr.imageSync(answers.url, { type: 'png' });
-    writeFile('url.png', png_buffer, (() =>  {}))
-    writeFile('url.txt', answers.url, (() =>  {}));
+    writeFile('url.png', png_buffer, ((err) =>  {
+      if(err) throw err;
+    }))
+    writeFile('url.txt', answers.url, ((err) =>  {
+      if(err) throw err;
+    }));
   })
   .catch((error) => {
     if (error.isTtyError) {
